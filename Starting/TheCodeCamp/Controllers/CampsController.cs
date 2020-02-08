@@ -37,10 +37,10 @@ namespace TheCodeCamp.Controllers
 
                 return Ok(mappedResult);
             }
-            catch
+            catch (Exception ex)
             {
                 // Don't return all exceptions that happens in Server for security reasons
-                return InternalServerError();
+                return InternalServerError(ex);
             }
         }
 
