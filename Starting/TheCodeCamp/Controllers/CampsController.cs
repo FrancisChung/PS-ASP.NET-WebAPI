@@ -9,9 +9,10 @@ namespace TheCodeCamp.Controllers
 {
     public class CampsController :ApiController
     {
-        public object Get()
+        public IHttpActionResult Get()
         {
-            return new {Name = "Francis", Occupation = "Developer"};
+            //return BadRequest("Not really bad. Just testing");
+            return Ok(new {Name = "Francis", Occupation = "Developer"});
         }
     }
 }
