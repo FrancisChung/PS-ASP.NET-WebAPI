@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Newtonsoft.Json.Serialization;
 
 namespace TheCodeCamp
 {
@@ -11,6 +12,9 @@ namespace TheCodeCamp
     {
       // Web API configuration and services
       AutofacConfig.Register();
+
+      //Change the casing of JsonFormatting
+      config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
       // Web API routes
       config.MapHttpAttributeRoutes();
