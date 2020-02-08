@@ -25,11 +25,11 @@ namespace TheCodeCamp.Controllers
 
         
         [Route()]
-        public async Task<IHttpActionResult> Get()
+        public async Task<IHttpActionResult> Get(bool includeTalks = false)
         {
             try
             {
-                var result = await _repository.GetAllCampsAsync();
+                var result = await _repository.GetAllCampsAsync(includeTalks);
                 if (result == null)
                     return NotFound();
 
