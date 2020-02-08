@@ -11,7 +11,7 @@ namespace TheCodeCamp.Models
         public int Length { get; set; } = 1;
 
         //Location Info (copied from Location Entity)
-        public string LocationVenueName { get; set; }
+        public string Venue { get; set; }
         public string LocationAddress1 { get; set; }
         public string LocationAddress2 { get; set; }
         public string LocationAddress3 { get; set; }
