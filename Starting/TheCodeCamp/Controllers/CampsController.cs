@@ -81,6 +81,11 @@ namespace TheCodeCamp.Controllers
         {
             try
             {
+                //Check for Unique Moniker first
+                if (await _repository.GetCampAsync(model.Moniker) != null)
+                    //return BadRequest("Moniker in use");
+                    ModelState.AddModelError("Moniker", "Moniker in use");
+
                 if (ModelState.IsValid)
                 {
                     var camp = _mapper.Map<Camp>(model);
