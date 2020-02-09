@@ -61,7 +61,7 @@ namespace TheCodeCamp.Controllers
             }
         }
 
-        [Route("searchByDate")]
+        [Route("searchByDate/{eventDate:datetime}")]
         [HttpGet]
         public async Task<IHttpActionResult> SearchByEventDate(DateTime eventDate, bool includeTalks=false)
         {
