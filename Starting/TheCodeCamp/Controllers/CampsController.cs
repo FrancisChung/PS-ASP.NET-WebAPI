@@ -89,8 +89,8 @@ namespace TheCodeCamp.Controllers
                     if (await _repository.SaveChangesAsync())
                     {
                         var newModel = _mapper.Map<CampModel>(camp);
-                        var location = Url.Link("GetCamp", new { moniker = newModel.Moniker });
-                        return Created(location, newModel);
+                        //var location = Url.Link("GetCamp", new { moniker = newModel.Moniker });
+                        return CreatedAtRoute("GetCamp", new { moniker = newModel.Moniker }, newModel);
                     }
                 }
 
