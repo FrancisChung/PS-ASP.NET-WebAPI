@@ -10,7 +10,8 @@ namespace TheCodeCamp.Data
             CreateMap<Speaker, SpeakerModel>();
             CreateMap<Talk, TalkModel>();
             CreateMap<Camp, CampModel>()
-                .ForMember(c => c.Venue, opt => opt.MapFrom(m => m.Location.VenueName));
+                .ForMember(c => c.Venue, opt => opt.MapFrom(m => m.Location.VenueName))
+                .ReverseMap();
         }
     }
 }
